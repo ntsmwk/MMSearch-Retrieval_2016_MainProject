@@ -12,7 +12,6 @@ public class ImageFeatureCM extends ImageFeature {
 	private RGBColorMoment rgbColorMoment;
 
 	public ImageFeatureCM(long imageId, RGBColorMoment rgbColorMoment) {
-		super();
 		this.imageId = imageId;
 		this.rgbColorMoment = rgbColorMoment;
 	}

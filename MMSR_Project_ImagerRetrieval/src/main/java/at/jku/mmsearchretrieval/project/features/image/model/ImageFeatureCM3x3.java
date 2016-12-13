@@ -13,8 +13,11 @@ public class ImageFeatureCM3x3 extends ImageFeature {
 
 	private RGBColorMoment[][] colorMoments3x3;
 
-	public ImageFeatureCM3x3(RGBColorMoment[][] colorMoments3x3) {
-		super();
+	public ImageFeatureCM3x3(long imageId, RGBColorMoment[][] colorMoments3x3) {
+		if(colorMoments3x3.length != 3 && colorMoments3x3[0].length != 3){
+			throw new UnsupportedOperationException("Only 3x3 color moments are allowed!");
+		}
+		this.imageId = imageId;
 		this.colorMoments3x3 = colorMoments3x3;
 	}
 
