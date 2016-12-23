@@ -28,7 +28,7 @@ public class ImageFeatureCMExtractor extends ImageFeatureExtractor<ImageFeatureC
 	}
 
 	private ImageFeatureCM createImageFeatureCM(CSVRecord record) {
-		long imageId = Long.parseLong(record.get(0));
+		String imageId = record.get(0);
 		ColorMoment rColorMoment = new ColorMoment(Double.parseDouble(record.get(1)), Double.parseDouble(record.get(2)),
 				Double.parseDouble(record.get(3)));
 		ColorMoment gColorMoment = new ColorMoment(Double.parseDouble(record.get(4)), Double.parseDouble(record.get(5)),

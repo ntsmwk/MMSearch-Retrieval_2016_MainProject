@@ -29,7 +29,7 @@ public class ImageFeatureGLRLMExtractor extends ImageFeatureExtractor<ImageFeatu
 	}
 
 	private ImageFeatureGLRLM createImageFeatureGLRLM(CSVRecord record) {
-		long imageId = Long.parseLong(record.get(0));
+		String imageId = record.get(0);
 		List<GrayLevelRunLengthMatriceStatistic> grayLevelRunLengthMatriceStatisticList = new ArrayList<GrayLevelRunLengthMatriceStatistic>();
 		List<Double> grayLevelRunLengthStatisticValues = new ArrayList<Double>();
 		int degree = 0;

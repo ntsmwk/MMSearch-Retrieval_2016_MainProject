@@ -10,7 +10,7 @@ public class ImageFeatureHOG extends ImageFeature {
 	
 	private HistogramOfOrientedGradients[][] histogramOfOrientedGradients;
 
-	public ImageFeatureHOG(long imageId, HistogramOfOrientedGradients[][] histogramOfOrientedGradients) {
+	public ImageFeatureHOG(String imageId, HistogramOfOrientedGradients[][] histogramOfOrientedGradients) {
 		this.imageId = imageId;
 		this.histogramOfOrientedGradients = histogramOfOrientedGradients;
 	}

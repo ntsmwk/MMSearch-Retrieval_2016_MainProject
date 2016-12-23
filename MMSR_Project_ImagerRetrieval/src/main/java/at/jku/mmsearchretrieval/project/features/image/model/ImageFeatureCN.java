@@ -12,7 +12,7 @@ public class ImageFeatureCN extends ImageFeature {
 
 	private ColorHistogram colorHistogram;
 
-	public ImageFeatureCN(long imageId, ColorHistogram colorHistogram) {
+	public ImageFeatureCN(String imageId, ColorHistogram colorHistogram) {
 		this.imageId = imageId;
 		this.colorHistogram = colorHistogram;
 	}

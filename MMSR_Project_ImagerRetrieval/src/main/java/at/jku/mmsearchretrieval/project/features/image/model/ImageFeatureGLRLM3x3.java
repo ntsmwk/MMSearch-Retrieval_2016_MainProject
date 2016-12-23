@@ -23,7 +23,7 @@ public class ImageFeatureGLRLM3x3 extends ImageFeature {
 
 	Hashtable<Integer, GrayLevelRunLengthMatriceStatistic>[][] grayLevelRunLengthMatriceStatistics;
 
-	public ImageFeatureGLRLM3x3(long imageId, 
+	public ImageFeatureGLRLM3x3(String imageId, 
 			Hashtable<Integer, GrayLevelRunLengthMatriceStatistic>[][] grayLevelRunLengthMatriceStatistics) {
 		this.imageId = imageId;
 		this.grayLevelRunLengthMatriceStatistics = grayLevelRunLengthMatriceStatistics;

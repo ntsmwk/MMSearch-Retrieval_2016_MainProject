@@ -24,7 +24,7 @@ public class ImageFeatureGLRLM extends ImageFeature {
 
 	private Hashtable<Integer, GrayLevelRunLengthMatriceStatistic> grayLevelRunLengthMatriceStatistics = new Hashtable<Integer, GrayLevelRunLengthMatriceStatistic>();
 
-	public ImageFeatureGLRLM(long imageId, List<GrayLevelRunLengthMatriceStatistic> grayLevelRunLengthMatriceStatistics){
+	public ImageFeatureGLRLM(String imageId, List<GrayLevelRunLengthMatriceStatistic> grayLevelRunLengthMatriceStatistics){
 		this.imageId = imageId;
 		for(GrayLevelRunLengthMatriceStatistic statistic : grayLevelRunLengthMatriceStatistics){
 			this.grayLevelRunLengthMatriceStatistics.put(statistic.getDegree(), statistic);

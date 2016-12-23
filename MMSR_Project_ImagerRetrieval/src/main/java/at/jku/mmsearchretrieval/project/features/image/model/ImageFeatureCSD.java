@@ -12,7 +12,7 @@ package at.jku.mmsearchretrieval.project.features.image.model;
 public class ImageFeatureCSD extends ImageFeature {
 	private ColorStructureDescriptor colorStructureDescriptor;
 
-	public ImageFeatureCSD(long imageId, ColorStructureDescriptor colorStructureDescriptor) {
+	public ImageFeatureCSD(String imageId, ColorStructureDescriptor colorStructureDescriptor) {
 		this.imageId = imageId;
 		this.colorStructureDescriptor = colorStructureDescriptor;
 	}

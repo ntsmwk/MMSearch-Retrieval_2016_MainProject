@@ -27,7 +27,7 @@ public class ImageFeatureCSDExtractor extends ImageFeatureExtractor<ImageFeature
 	}
 
 	private ImageFeatureCSD createImageFeatureCSD(CSVRecord record) {
-		long imageId = Long.parseLong(record.get(0));
+		String imageId = record.get(0);
 		ArrayList<Double> colorStructureDescriptor = new ArrayList<Double>();
 		for (int i = 1; i < record.size(); i++) {
 			colorStructureDescriptor.add(Double.parseDouble(record.get(i)));

@@ -11,7 +11,7 @@ public class ImageFeatureCN3x3 extends ImageFeature {
 
 	private ColorHistogram[][] colorHistogram3x3;
 
-	public ImageFeatureCN3x3(long imageId, ColorHistogram[][] colorHistogram3x3) {
+	public ImageFeatureCN3x3(String imageId, ColorHistogram[][] colorHistogram3x3) {
 		this.imageId = imageId;
 		this.colorHistogram3x3 = colorHistogram3x3;
 	}

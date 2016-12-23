@@ -11,7 +11,7 @@ package at.jku.mmsearchretrieval.project.features.image.model;
 public class ImageFeatureCM extends ImageFeature {
 	private RGBColorMoment rgbColorMoment;
 
-	public ImageFeatureCM(long imageId, RGBColorMoment rgbColorMoment) {
+	public ImageFeatureCM(String imageId, RGBColorMoment rgbColorMoment) {
 		this.imageId = imageId;
 		this.rgbColorMoment = rgbColorMoment;
 	}

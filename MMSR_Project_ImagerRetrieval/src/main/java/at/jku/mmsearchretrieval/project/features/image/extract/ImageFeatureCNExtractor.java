@@ -27,7 +27,7 @@ public class ImageFeatureCNExtractor extends ImageFeatureExtractor<ImageFeatureC
 	}
 
 	private ImageFeatureCN createImageFeatureCN(CSVRecord record) {
-		long imageId = Long.parseLong(record.get(0));
+		String imageId = record.get(0);
 		List<Double> colorList = new ArrayList<Double>();
 		for(int i = 1; i < record.size(); i++){
 			colorList.add(Double.parseDouble(record.get(i)));

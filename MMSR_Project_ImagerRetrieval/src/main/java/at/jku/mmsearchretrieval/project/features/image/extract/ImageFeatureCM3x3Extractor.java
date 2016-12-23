@@ -28,7 +28,7 @@ public class ImageFeatureCM3x3Extractor extends ImageFeatureExtractor<ImageFeatu
 	}
 
 	private ImageFeatureCM3x3 createImageFeatureCM3x3(CSVRecord record) {
-		long imageId = Long.parseLong(record.get(0));
+		String imageId = record.get(0);
 		RGBColorMoment[][] rgbColorMoments = new RGBColorMoment[3][3];
 
 		// [0,0] ==> 1 - 9

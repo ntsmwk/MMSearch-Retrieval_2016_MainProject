@@ -23,11 +23,11 @@ public class ImageFeatureCMComparator extends ImageFeatureComparator<ImageFeatur
 
 	private double compareRGBColorMoment(RGBColorMoment colorMoment1, RGBColorMoment colorMoment2) {
 		double value = 0.0;
-		value += compareColorMoment(colorMoment1.getrColorMoment(), colorMoment1.getrColorMoment());
-		value += compareColorMoment(colorMoment1.getgColorMoment(), colorMoment1.getgColorMoment());
-		value += compareColorMoment(colorMoment1.getbColorMoment(), colorMoment1.getbColorMoment());
+		value += compareColorMoment(colorMoment1.getrColorMoment(), colorMoment2.getrColorMoment());
+		value += compareColorMoment(colorMoment1.getgColorMoment(), colorMoment2.getgColorMoment());
+		value += compareColorMoment(colorMoment1.getbColorMoment(), colorMoment2.getbColorMoment());
 
-		return value / 3;
+		return value / 3.0;
 	}
 
 	private double compareColorMoment(ColorMoment colorMoment1, ColorMoment colorMoment2) {

@@ -27,7 +27,7 @@ public class ImageFeatureCN3x3Extractor extends ImageFeatureExtractor<ImageFeatu
 	}
 
 	private ImageFeatureCN3x3 createImageFeatureCN3x3(CSVRecord record) {
-		long imageId = Long.parseLong(record.get(0));
+		String imageId = record.get(0);
 		ColorHistogram[][] colorHistogram3x3 = new ColorHistogram[3][3];
 		int i = 0;
 		int j = 0;
