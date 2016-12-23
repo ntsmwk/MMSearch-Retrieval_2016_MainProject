@@ -11,10 +11,11 @@ import java.util.List;
  */
 public class ColorStructureDescriptor {
 
+	private static final int COLOR_STUCTURE_DESCRIPTOR_COLOR_BINS = 64;
 	private List<Double> colorStructureDescriptor;
 
 	public ColorStructureDescriptor(List<Double> colorStructureDescriptor) {
-		if(colorStructureDescriptor.size() != 64){
+		if(colorStructureDescriptor.size() != COLOR_STUCTURE_DESCRIPTOR_COLOR_BINS){
 			throw new UnsupportedOperationException("Only color structure descriptor with exactly 64 values is allowed!");
 		}
 		this.colorStructureDescriptor = colorStructureDescriptor;

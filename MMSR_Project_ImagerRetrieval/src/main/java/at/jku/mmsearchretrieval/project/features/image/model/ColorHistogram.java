@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * The colorHistogram consists of the relative values for the 11 colors - black,
- * blue, brown, grey, green, oragne, pink, purple, red, white, yellow.
+ * blue, brown, grey, green, orange, pink, purple, red, white, yellow.
  * 
  * @author Markus
  *

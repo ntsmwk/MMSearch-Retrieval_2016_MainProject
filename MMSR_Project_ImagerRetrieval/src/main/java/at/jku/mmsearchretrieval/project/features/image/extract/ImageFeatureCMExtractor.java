@@ -22,12 +22,12 @@ public class ImageFeatureCMExtractor extends ImageFeatureExtractor<ImageFeatureC
 		Iterable<CSVRecord> records = CSVFormat.RFC4180.parse(in);
 		ArrayList<ImageFeatureCM> imageFeatures = new ArrayList<ImageFeatureCM>();
 		for (CSVRecord record : records) {
-			createImageFeatureCM(imageFeatures, record);
+			imageFeatures.add(createImageFeatureCM(record));
 		}
 		return imageFeatures;
 	}
 
-	private void createImageFeatureCM(ArrayList<ImageFeatureCM> imageFeatures, CSVRecord record) {
+	private ImageFeatureCM createImageFeatureCM(CSVRecord record) {
 		long imageId = Long.parseLong(record.get(0));
 		ColorMoment rColorMoment = new ColorMoment(Double.parseDouble(record.get(1)), Double.parseDouble(record.get(2)),
 				Double.parseDouble(record.get(3)));
@@ -36,7 +36,7 @@ public class ImageFeatureCMExtractor extends ImageFeatureExtractor<ImageFeatureC
 		ColorMoment bColorMoment = new ColorMoment(Double.parseDouble(record.get(7)), Double.parseDouble(record.get(8)),
 				Double.parseDouble(record.get(9)));
 		RGBColorMoment rgbColorMoment = new RGBColorMoment(rColorMoment, gColorMoment, bColorMoment);
-		imageFeatures.add(new ImageFeatureCM(imageId, rgbColorMoment));
+		return new ImageFeatureCM(imageId, rgbColorMoment);
 	}
 
 }
