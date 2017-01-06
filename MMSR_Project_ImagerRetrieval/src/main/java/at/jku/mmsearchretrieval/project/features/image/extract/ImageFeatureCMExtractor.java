@@ -17,7 +17,7 @@ import at.jku.mmsearchretrieval.project.features.image.model.RGBColorMoment;
 public class ImageFeatureCMExtractor extends ImageFeatureExtractor<ImageFeatureCM> {
 
 	@Override
-	public List<ImageFeatureCM> extract(String URL) throws FileNotFoundException, IOException {
+	public ArrayList<ImageFeatureCM> extract(String URL) throws FileNotFoundException, IOException {
 		Reader in = new FileReader(URL);
 		Iterable<CSVRecord> records = CSVFormat.RFC4180.parse(in);
 		ArrayList<ImageFeatureCM> imageFeatures = new ArrayList<ImageFeatureCM>();
@@ -36,7 +36,8 @@ public class ImageFeatureCMExtractor extends ImageFeatureExtractor<ImageFeatureC
 		ColorMoment bColorMoment = new ColorMoment(Double.parseDouble(record.get(7)), Double.parseDouble(record.get(8)),
 				Double.parseDouble(record.get(9)));
 		RGBColorMoment rgbColorMoment = new RGBColorMoment(rColorMoment, gColorMoment, bColorMoment);
-		return new ImageFeatureCM(imageId, rgbColorMoment);
+		return new ImageFeatureCM(imageId, rgbColorMoment, transformToArrayList(record));
+		
 	}
 
 }

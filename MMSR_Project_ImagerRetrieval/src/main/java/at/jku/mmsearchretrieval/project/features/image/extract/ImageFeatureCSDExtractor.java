@@ -16,7 +16,7 @@ import at.jku.mmsearchretrieval.project.features.image.model.ImageFeatureCSD;
 public class ImageFeatureCSDExtractor extends ImageFeatureExtractor<ImageFeatureCSD> {
 
 	@Override
-	public List<ImageFeatureCSD> extract(String URL) throws FileNotFoundException, IOException {
+	public ArrayList<ImageFeatureCSD> extract(String URL) throws FileNotFoundException, IOException {
 		Reader in = new FileReader(URL);
 		Iterable<CSVRecord> records = CSVFormat.RFC4180.parse(in);
 		ArrayList<ImageFeatureCSD> imageFeatures = new ArrayList<ImageFeatureCSD>();
@@ -32,6 +32,6 @@ public class ImageFeatureCSDExtractor extends ImageFeatureExtractor<ImageFeature
 		for (int i = 1; i < record.size(); i++) {
 			colorStructureDescriptor.add(Double.parseDouble(record.get(i)));
 		}
-		return new ImageFeatureCSD(imageId, new ColorStructureDescriptor(colorStructureDescriptor));
+		return new ImageFeatureCSD(imageId, new ColorStructureDescriptor(colorStructureDescriptor), transformToArrayList(record));
 	}
 }

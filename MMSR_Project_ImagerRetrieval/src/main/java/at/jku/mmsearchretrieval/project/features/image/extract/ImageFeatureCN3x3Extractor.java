@@ -16,7 +16,7 @@ import at.jku.mmsearchretrieval.project.features.image.model.ImageFeatureCN3x3;
 public class ImageFeatureCN3x3Extractor extends ImageFeatureExtractor<ImageFeatureCN3x3> {
 
 	@Override
-	public List<ImageFeatureCN3x3> extract(String URL) throws FileNotFoundException, IOException {
+	public ArrayList<ImageFeatureCN3x3> extract(String URL) throws FileNotFoundException, IOException {
 		Reader in = new FileReader(URL);
 		Iterable<CSVRecord> records = CSVFormat.RFC4180.parse(in);
 		ArrayList<ImageFeatureCN3x3> imageFeatures = new ArrayList<ImageFeatureCN3x3>();
@@ -46,7 +46,7 @@ public class ImageFeatureCN3x3Extractor extends ImageFeatureExtractor<ImageFeatu
 				}
 			}
 		}
-		return new ImageFeatureCN3x3(imageId, colorHistogram3x3);
+		return new ImageFeatureCN3x3(imageId, colorHistogram3x3, transformToArrayList(record));
 	}
 
 }

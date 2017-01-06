@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
@@ -17,7 +16,7 @@ import at.jku.mmsearchretrieval.project.features.image.model.RGBColorMoment;
 public class ImageFeatureCM3x3Extractor extends ImageFeatureExtractor<ImageFeatureCM3x3> {
 
 	@Override
-	public List<ImageFeatureCM3x3> extract(String URL) throws FileNotFoundException, IOException {
+	public ArrayList<ImageFeatureCM3x3> extract(String URL) throws FileNotFoundException, IOException {
 		Reader in = new FileReader(URL);
 		Iterable<CSVRecord> records = CSVFormat.RFC4180.parse(in);
 		ArrayList<ImageFeatureCM3x3> imageFeatures = new ArrayList<ImageFeatureCM3x3>();
@@ -54,6 +53,6 @@ public class ImageFeatureCM3x3Extractor extends ImageFeatureExtractor<ImageFeatu
 				rgbColorMoments[i][j] = new RGBColorMoment(rColorMoment, gColorMoment, bColorMoment);
 			}
 		}
-		return new ImageFeatureCM3x3(imageId, rgbColorMoments);
+		return new ImageFeatureCM3x3(imageId, rgbColorMoments, transformToArrayList(record));
 	}
 }

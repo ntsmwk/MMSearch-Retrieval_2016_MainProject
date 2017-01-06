@@ -1,5 +1,7 @@
 package at.jku.mmsearchretrieval.project.features.image.model;
 
+import java.util.ArrayList;
+
 /**
  * This feature contains the color structure descriptor (CSD). 
  * The CSD is calculated by dividing the picture into 8x8 rasters 
@@ -12,9 +14,10 @@ package at.jku.mmsearchretrieval.project.features.image.model;
 public class ImageFeatureCSD extends ImageFeature {
 	private ColorStructureDescriptor colorStructureDescriptor;
 
-	public ImageFeatureCSD(String imageId, ColorStructureDescriptor colorStructureDescriptor) {
+	public ImageFeatureCSD(String imageId, ColorStructureDescriptor colorStructureDescriptor, ArrayList<Double> rawValues) {
 		this.imageId = imageId;
 		this.colorStructureDescriptor = colorStructureDescriptor;
+		this.rawValues = rawValues;
 	}
 
 	public ColorStructureDescriptor getColorStructureDescriptor() {

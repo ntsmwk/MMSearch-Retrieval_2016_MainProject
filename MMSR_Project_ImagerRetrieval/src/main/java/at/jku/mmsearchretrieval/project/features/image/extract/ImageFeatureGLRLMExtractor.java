@@ -18,7 +18,7 @@ import at.jku.mmsearchretrieval.project.features.image.model.ImageFeatureGLRLM;
 public class ImageFeatureGLRLMExtractor extends ImageFeatureExtractor<ImageFeatureGLRLM> {
 
 	@Override
-	public List<ImageFeatureGLRLM> extract(String URL) throws FileNotFoundException, IOException {
+	public ArrayList<ImageFeatureGLRLM> extract(String URL) throws FileNotFoundException, IOException {
 		Reader in = new FileReader(URL);
 		Iterable<CSVRecord> records = CSVFormat.RFC4180.parse(in);
 		ArrayList<ImageFeatureGLRLM> imageFeatures = new ArrayList<ImageFeatureGLRLM>();
@@ -41,6 +41,6 @@ public class ImageFeatureGLRLMExtractor extends ImageFeatureExtractor<ImageFeatu
 				grayLevelRunLengthStatisticValues = new ArrayList<Double>();
 			}
 		}
-		return new ImageFeatureGLRLM(imageId, grayLevelRunLengthMatriceStatisticList);
+		return new ImageFeatureGLRLM(imageId, grayLevelRunLengthMatriceStatisticList, transformToArrayList(record));
 	}
 }

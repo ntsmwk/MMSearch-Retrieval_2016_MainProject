@@ -1,5 +1,6 @@
 package at.jku.mmsearchretrieval.project.features.image.model;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 /**
@@ -24,9 +25,10 @@ public class ImageFeatureGLRLM3x3 extends ImageFeature {
 	Hashtable<Integer, GrayLevelRunLengthMatriceStatistic>[][] grayLevelRunLengthMatriceStatistics;
 
 	public ImageFeatureGLRLM3x3(String imageId, 
-			Hashtable<Integer, GrayLevelRunLengthMatriceStatistic>[][] grayLevelRunLengthMatriceStatistics) {
+			Hashtable<Integer, GrayLevelRunLengthMatriceStatistic>[][] grayLevelRunLengthMatriceStatistics, ArrayList<Double> rawValues) {
 		this.imageId = imageId;
 		this.grayLevelRunLengthMatriceStatistics = grayLevelRunLengthMatriceStatistics;
+		this.rawValues = rawValues;
 	}
 
 	public Hashtable<Integer, GrayLevelRunLengthMatriceStatistic>[][] getGrayLevelRunLengthMatriceStatistics() {

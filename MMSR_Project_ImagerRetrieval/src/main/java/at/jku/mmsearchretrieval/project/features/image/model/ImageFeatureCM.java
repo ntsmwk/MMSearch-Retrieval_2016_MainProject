@@ -1,5 +1,7 @@
 package at.jku.mmsearchretrieval.project.features.image.model;
 
+import java.util.ArrayList;
+
 /**
  * Represents the color moment of a given image. The color moment consists of
  * the three moments - Mean, Standard Deviation and Skewness. for each RGB
@@ -11,9 +13,10 @@ package at.jku.mmsearchretrieval.project.features.image.model;
 public class ImageFeatureCM extends ImageFeature {
 	private RGBColorMoment rgbColorMoment;
 
-	public ImageFeatureCM(String imageId, RGBColorMoment rgbColorMoment) {
+	public ImageFeatureCM(String imageId, RGBColorMoment rgbColorMoment, ArrayList<Double> rawValues) {
 		this.imageId = imageId;
 		this.rgbColorMoment = rgbColorMoment;
+		this.rawValues = rawValues;
 	}
 
 	public RGBColorMoment getRgbColorMoment() {

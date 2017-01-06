@@ -1,6 +1,7 @@
 package at.jku.mmsearchretrieval.project.features.image.model;
 
 import java.nio.channels.UnsupportedAddressTypeException;
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -24,11 +25,12 @@ public class ImageFeatureGLRLM extends ImageFeature {
 
 	private Hashtable<Integer, GrayLevelRunLengthMatriceStatistic> grayLevelRunLengthMatriceStatistics = new Hashtable<Integer, GrayLevelRunLengthMatriceStatistic>();
 
-	public ImageFeatureGLRLM(String imageId, List<GrayLevelRunLengthMatriceStatistic> grayLevelRunLengthMatriceStatistics){
+	public ImageFeatureGLRLM(String imageId, List<GrayLevelRunLengthMatriceStatistic> grayLevelRunLengthMatriceStatistics, ArrayList<Double> rawValues){
 		this.imageId = imageId;
 		for(GrayLevelRunLengthMatriceStatistic statistic : grayLevelRunLengthMatriceStatistics){
 			this.grayLevelRunLengthMatriceStatistics.put(statistic.getDegree(), statistic);
 		}
+		this.rawValues = rawValues;
 	}
 
 	public Hashtable<Integer, GrayLevelRunLengthMatriceStatistic> getGrayLevelRunLengthMatriceStatistics() {
