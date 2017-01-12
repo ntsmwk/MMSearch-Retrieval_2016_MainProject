@@ -4,16 +4,17 @@ library(testit)
 distanceFiles <- list.files(path="/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/MMSearch-Retrieval_2016_MainProject/MMSR_Project_ImagerRetrieval/src/scripts/relevantimages", 
                     pattern="distances*", full.names=TRUE, recursive=FALSE)
 
-dirs <- list.dirs(path="/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/div-2014/devset/img", 
+dirs <- list.dirs(path="/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/div-2014/testset/img", 
                   full.names=FALSE, recursive=FALSE)
 
 correctlyClustered <- NULL
 imgOccUnsorted <- NULL
+imgOccSorted <- NULL
 
 warn <- NULL
 
 for (monument in dirs) {
-  imagesPath = paste0("/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/div-2014/devset/img/", monument)
+  imagesPath = paste0("/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/div-2014/testset/img/", monument)
   images <- list.files(path=imagesPath, 
                        pattern=".", full.names=FALSE, recursive=FALSE)
   for(image in images) {
@@ -50,5 +51,5 @@ for (monument in dirs) {
 
 
 write.table(imgOccSorted, 
-            "/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/MMSearch-Retrieval_2016_MainProject/MMSR_Project_ImagerRetrieval/src/scripts/relevantimages/retrievedImages_updated.csv",
+            "/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/MMSearch-Retrieval_2016_MainProject/MMSR_Project_ImagerRetrieval/src/scripts/relevantimages/retrievedImages.csv",
             sep=",", quote=FALSE, row.names=F, col.names=F)

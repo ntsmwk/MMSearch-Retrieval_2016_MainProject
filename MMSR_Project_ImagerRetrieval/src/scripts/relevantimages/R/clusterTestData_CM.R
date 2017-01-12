@@ -1,4 +1,4 @@
-files <- list.files(path="/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/div-2014/devset/descvis/img", 
+files <- list.files(path="/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/div-2014/testset/descvis/img", 
                     pattern="*CM.csv", full.names=T, recursive=FALSE)
 
 centroids <- read.csv("/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/MMSearch-Retrieval_2016_MainProject/MMSR_Project_ImagerRetrieval/src/scripts/relevantimages/centroids_CM.csv", header=FALSE)
@@ -20,6 +20,6 @@ for (file in files) {
 }
 
 write.table(result, 
-            "/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/MMSearch-Retrieval_2016_MainProject/MMSR_Project_ImagerRetrieval/src/scripts/relevantimages/distances_CM_updated.csv",
+            "/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/MMSearch-Retrieval_2016_MainProject/MMSR_Project_ImagerRetrieval/src/scripts/relevantimages/distances_CM.csv",
             sep=",", quote=FALSE, row.names=F, col.names=F)
 

@@ -1,8 +1,8 @@
 
-files <- list.files(path="/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/div-2014/devset/descvis/img", 
+files <- list.files(path="/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/div-2014/testset/descvis/img", 
                     pattern="*HOG.csv", full.names=T, recursive=FALSE)
 
-centroids <- read.csv("/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/MMSearch-Retrieval_2016_MainProject/MMSR_Project_ImagerRetrieval/src/scripts/centroids_HOG.csv", header=FALSE)
+centroids <- read.csv("/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/MMSearch-Retrieval_2016_MainProject/MMSR_Project_ImagerRetrieval/src/scripts/relevantimages/centroids_HOG.csv", header=FALSE)
 result <- NULL
 for (file in files) {
   csvfile <- read.csv(file, header=FALSE)
