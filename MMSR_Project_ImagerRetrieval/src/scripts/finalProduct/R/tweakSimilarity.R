@@ -1,4 +1,4 @@
-file <- read.csv("/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/MMSearch-Retrieval_2016_MainProject/MMSR_Project_ImagerRetrieval/src/scripts/finalProduct/retrievedImages.csv",
+file <- read.csv("/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/MMSearch-Retrieval_2016_MainProject/MMSR_Project_ImagerRetrieval/src/scripts/finalProduct/combinedList.csv",
          header = FALSE)
 
 monumentList <- list.dirs(path="/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/div-2014/testset/img", 
@@ -6,7 +6,7 @@ monumentList <- list.dirs(path="/home/alina/Documents/Universität/2016W/Multime
 
 finalList <- NULL
 for (monument in monumentList) {
-  imgVisMonument <- imgVisList[imgVisList[1]==monument,]
+  imgVisMonument <- file[file[1]==monument,]
   
   if (nrow(imgVisMonument) > 0) {
     score <- NULL
@@ -19,5 +19,5 @@ for (monument in monumentList) {
 }
 
 write.table(finalList, 
-            "/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/MMSearch-Retrieval_2016_MainProject/MMSR_Project_ImagerRetrieval/src/scripts/finalProduct/final_onlyImg.csv",
+            "/home/alina/Documents/Universität/2016W/Multimedia Search and Retrieval/Project/MMSearch-Retrieval_2016_MainProject/MMSR_Project_ImagerRetrieval/src/scripts/finalProduct/final.csv",
             sep=",", quote=FALSE, row.names=F, col.names=F)
